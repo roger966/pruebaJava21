@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+package com.example.proyectoPrueba.model.DTO;
+
+/**
+ * 
+ */
+public class UsuarioDTO {
+
+}

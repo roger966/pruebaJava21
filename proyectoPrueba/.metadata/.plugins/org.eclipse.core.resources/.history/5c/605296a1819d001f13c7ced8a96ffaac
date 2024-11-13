@@ -1,0 +1,2 @@
+spring.application.name=proyectoPrueba
+server.port=8081
