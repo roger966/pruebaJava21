@@ -62,9 +62,71 @@
 		    <artifactId>h2</artifactId>
 		    <scope>runtime</scope>
 		</dependency>
+		<dependency>
+	    	<groupId>org.springframework.security</groupId>
+	   	 	<artifactId>spring-security-core</artifactId>
+		</dependency>
+		 <!-- Dependencia de Mockito -->
+	    <dependency>
+	        <groupId>org.mockito</groupId>
+	        <artifactId>mockito-core</artifactId>
+	        <version>5.4.0</version> <!-- Asegúrate de que sea compatible con Java 21 -->
+	        <scope>test</scope>
+	    </dependency>
+	    <dependency>
+		    <groupId>net.bytebuddy</groupId>
+		    <artifactId>byte-buddy</artifactId>
+		    <version>1.14.19</version> <!-- Asegúrate de usar la versión correcta -->
+		</dependency>
+
+		<!--<dependency>
+        	<groupId>org.springdoc</groupId>
+        	<artifactId>springdoc-openapi-ui</artifactId>
+        	<version>1.5.10</version>
+    	</dependency>-->
+    	<!--<dependency>
+		    <groupId>org.springdoc</groupId>
+		    <artifactId>springdoc-openapi-ui</artifactId>
+		    <version>1.8.0</version>
+		</dependency>-->
+		<!-- Dependencia para trabajar con Swagger en Spring -->
+	    <!--<dependency>
+	        <groupId>io.swagger.core.v3</groupId>
+	        <artifactId>swagger-annotations</artifactId>
+	        <version>2.2.10</version> 
+	    </dependency>-->
+		  
+    	
+    	
+    	
+    	
+    	<!-- Dependencia de WebJars Locator 
+    <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>webjars-locator-core</artifactId>
+        <version>0.58</version>
+    </dependency>
+
+     Dependencia de ClassGraph 
+    <dependency>
+        <groupId>io.github.classgraph</groupId>
+        <artifactId>classgraph</artifactId>
+        <version>4.8.50</version>  Asegúrate de que esta versión sea compatible 
+    </dependency>-->
+   <!-- <dependency>
+    <groupId>io.github.classgraph</groupId>
+    <artifactId>classgraph</artifactId>
+    <version>4.8.70</version>
+</dependency>-->
+	    <!--<dependency>
+	    	<groupId>org.webjars</groupId>
+	    	<artifactId>webjars-locator-core</artifactId>
+	    	<version>0.63.0</version>
+		</dependency>-->
+
+		
 
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>

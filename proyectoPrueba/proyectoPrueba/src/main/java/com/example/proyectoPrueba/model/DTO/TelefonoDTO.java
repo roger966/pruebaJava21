@@ -11,7 +11,7 @@ public class TelefonoDTO {
 	
 	private String number;
     private String citycode;
-    private String contrycode;
+    private String countrycode;
     
     /**
 	 * @return the number
@@ -40,13 +40,13 @@ public class TelefonoDTO {
 	/**
 	 * @return the countrycode
 	 */
-	public String getContrycode() {
-		return contrycode;
+	public String getCountrycode() {
+		return countrycode;
 	}
 	/**
 	 * @param countrycode the countrycode to set
 	 */
-	public void setContrycode(String contrycode) {
-		this.contrycode = contrycode;
+	public void setCountrycode(String countrycode) {
+		this.countrycode = countrycode;
 	}
 }
