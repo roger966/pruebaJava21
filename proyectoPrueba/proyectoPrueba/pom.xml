@@ -124,7 +124,12 @@
 	    	<version>0.63.0</version>
 		</dependency>-->
 
-		
+		<!-- Springdoc OpenAPI para la integración de Swagger -->
+       <!--- <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.8.0</version>
+        </dependency>-->
 
 	</dependencies>
 	<build>

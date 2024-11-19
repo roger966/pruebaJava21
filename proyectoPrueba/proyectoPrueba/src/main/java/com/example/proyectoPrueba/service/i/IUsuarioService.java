@@ -39,4 +39,10 @@ public interface IUsuarioService {
 	 * @param id dato de busqueda para la acción de eliminar
 	 */
 	public ResultadoDTO eliminarUsuario(UUID id);
+	
+	/**
+	 * <b>Descripción:</b> Método que contiene lógica necesaria para realizar la busqueda de los usuario mediante filtro dinámico 
+	 * @param usuario corresponde a los datos de usuario necesarios para la busqueda
+	 */
+	public List<Usuario> buscarUsuariosFiltroDinamico(UsuarioDTO usuarioDTO);
 }

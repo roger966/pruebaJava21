@@ -12,11 +12,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.example.proyectoPrueba.repository.NivelContrasenaRepository;
 import com.example.proyectoPrueba.repository.UsuarioRepository;
 import com.example.proyectoPrueba.service.i.IUsuarioService;
+
+import jakarta.persistence.criteria.Predicate;
+import jakarta.transaction.Transactional;
 
 import com.example.proyectoPrueba.model.DTO.ResultadoDTO;
 import com.example.proyectoPrueba.model.DTO.TelefonoDTO;
@@ -263,4 +267,31 @@ public class UsuarioService implements IUsuarioService{
 		return resultadoDTO;
 		
 	}
+	
+	
+	
+	// Método para obtener las especificaciones dinámicas
+    public Specification<Usuario> crearEspecificacion(UsuarioDTO usuarioDTO) {
+        return Specification.where((root, query, criteriaBuilder) -> {
+            Predicate predicate  = criteriaBuilder.conjunction();
+        	
+            if (usuarioDTO.getName() != null && !usuarioDTO.getName().isEmpty()) {
+                //query.where(criteriaBuilder.like(root.get("name"), "%" + usuarioDTO.getName() + "%"));
+            
+            	predicate = criteriaBuilder.and(predicate,criteriaBuilder.like(root.get("name"), "%" + usuarioDTO.getName() + "%"));
+            }
+            if (usuarioDTO.getEmail() != null && !usuarioDTO.getEmail().isEmpty()) {
+                predicate = criteriaBuilder.and(predicate,criteriaBuilder.like(root.get("email"), "%" + usuarioDTO.getEmail() + "%"));
+            }
+            //Retornar el predicado combinado, que contiene todas las condiciones unidas por el AND
+            return predicate;
+        });
+    }
+    
+    @Transactional
+    @Override
+    public List<Usuario> buscarUsuariosFiltroDinamico(UsuarioDTO usuarioDTO) {
+        Specification<Usuario> especificacion = crearEspecificacion(usuarioDTO);
+        return usuarioRepository.findAll(especificacion);
+    }
 }

@@ -73,4 +73,14 @@ public class UsuarioController {
 	public ResultadoDTO eliminaUsuario(@PathVariable UUID id){
 		return iUsuarioService.eliminarUsuario(id);
 	}
+	
+	/**
+	 * <b>Descripción:</b> Método que contiene lógica necesaria para realizar la busqueda de los usuario mediante filtro dinámico, retorna
+	 * lista de usuarios que cumplen con el contenido de nombre y correo, filtro contención en su data interna 
+	 * @param usuario corresponde a los datos de usuario necesarios para la busqueda
+	 */
+	@GetMapping("/buscarUsuariosFiltroDinamico")
+    public List<Usuario> buscarUsuariosFiltroDinamico(@RequestBody UsuarioDTO usuario) {
+        return iUsuarioService.buscarUsuariosFiltroDinamico(usuario);
+    }
 }
