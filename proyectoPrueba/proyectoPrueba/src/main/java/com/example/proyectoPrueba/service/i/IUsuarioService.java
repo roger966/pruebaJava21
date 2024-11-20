@@ -6,6 +6,8 @@ package com.example.proyectoPrueba.service.i;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.data.domain.Page;
+
 import com.example.proyectoPrueba.model.DTO.ResultadoDTO;
 import com.example.proyectoPrueba.model.DTO.UsuarioDTO;
 import com.example.proyectoPrueba.model.entity.Usuario;
@@ -45,4 +47,11 @@ public interface IUsuarioService {
 	 * @param usuario corresponde a los datos de usuario necesarios para la busqueda
 	 */
 	public List<Usuario> buscarUsuariosFiltroDinamico(UsuarioDTO usuarioDTO);
+
+	/**
+	 * <b>Descripción:</b> Método que contiene lógica necesaria para obtener los usuarios correspondientes a la pagina 
+	 * @param pagina corresponde a la pagina de la vista
+	 * @param tamanoPagina corresponde a la cantidad de datos a presentar en la vista 
+	 */
+	public Page<Usuario> obtenerUsuariosPaginados(int pagina, int tamanoPagina);
 }

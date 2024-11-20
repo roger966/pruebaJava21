@@ -6,6 +6,8 @@ package com.example.proyectoPrueba.repository;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -21,4 +23,7 @@ import com.example.proyectoPrueba.model.entity.Usuario;
 public interface UsuarioRepository extends CrudRepository<Usuario, UUID>, JpaSpecificationExecutor<Usuario>{
 	
 	Optional<Usuario> findByEmail(String email);
+	
+	//Para la consulta paginada
+	Page<Usuario> findAll(Pageable pageable);
 }

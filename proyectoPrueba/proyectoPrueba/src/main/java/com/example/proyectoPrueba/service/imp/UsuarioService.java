@@ -12,6 +12,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -269,8 +272,10 @@ public class UsuarioService implements IUsuarioService{
 	}
 	
 	
-	
-	// Método para obtener las especificaciones dinámicas
+	/**
+     * <b>Descripción:</b> Método encargado de obtener las especificaciones dinámicas
+     * @author roger
+     */
     public Specification<Usuario> crearEspecificacion(UsuarioDTO usuarioDTO) {
         return Specification.where((root, query, criteriaBuilder) -> {
             Predicate predicate  = criteriaBuilder.conjunction();
@@ -288,10 +293,26 @@ public class UsuarioService implements IUsuarioService{
         });
     }
     
+    
+    /**
+     * <b>Descripción:</b> Método encargado de la busqueda de usuario mediante filtro dinamico
+     * @author roger
+     */
     @Transactional
     @Override
     public List<Usuario> buscarUsuariosFiltroDinamico(UsuarioDTO usuarioDTO) {
         Specification<Usuario> especificacion = crearEspecificacion(usuarioDTO);
         return usuarioRepository.findAll(especificacion);
+    }
+    
+    
+    /**
+     * <b>Descripción:</b> Método encargado de obtener usuarios paginados
+     * @author roger
+     */
+    @Override
+    public Page<Usuario> obtenerUsuariosPaginados(int pagina, int tamanoPagina){
+    	Pageable pageable = PageRequest.of(pagina, tamanoPagina);
+    	return usuarioRepository.findAll(pageable);    	
     }
 }

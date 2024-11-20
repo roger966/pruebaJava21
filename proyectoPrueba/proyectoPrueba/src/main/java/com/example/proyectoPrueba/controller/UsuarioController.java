@@ -7,12 +7,14 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.proyectoPrueba.model.DTO.ResultadoDTO;
@@ -82,5 +84,16 @@ public class UsuarioController {
 	@GetMapping("/buscarUsuariosFiltroDinamico")
     public List<Usuario> buscarUsuariosFiltroDinamico(@RequestBody UsuarioDTO usuario) {
         return iUsuarioService.buscarUsuariosFiltroDinamico(usuario);
+    }
+	
+	
+	/**
+	 * <b>Descripción:</b> Método que contiene lógica necesaria para obtener los usuarios paginados
+	 * @param usuario corresponde a los datos de usuario necesarios para la busqueda
+	 */
+	@GetMapping("/obtieneUsuariosPaginados")
+    public Page<Usuario> obtenerUsuariosPaginados(@RequestParam(defaultValue = "0") int pagina,
+    		@RequestParam(defaultValue = "5") int tamanoPagina) {
+        return iUsuarioService.obtenerUsuariosPaginados(pagina, tamanoPagina);
     }
 }
