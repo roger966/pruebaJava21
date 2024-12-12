@@ -1,0 +1,31 @@
+spring.application.name=proyectoPrueba
+
+
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+
+
+springboot.api.docs.enable=true
+springboot.swagger-ui.enabled=true
+
+# Configuración básica para Swagger
+springdoc.api-docs.enabled=true              # Habilita el endpoint de OpenAPI
+springdoc.swagger-ui.enabled=true           # Habilita la interfaz de Swagger UI
+springdoc.swagger-ui.path=/swagger-ui.html  # Ruta de acceso al Swagger UI
+
+# Personaliza la API (opcional)
+springdoc.api-docs.title=Mi API
+springdoc.api-docs.description=Documentación de mi API RESTful
+springdoc.api-docs.version=1.0.0
+springdoc.api-docs.contact.name=Nombre del Contacto
+springdoc.api-docs.contact.url=http://www.ejemplo.com
+springdoc.api-docs.contact.email=contacto@ejemplo.com
+springdoc.api-docs.license.name=Licencia de Ejemplo
+springdoc.api-docs.license.url=http://www.ejemplo.com/licencia
+springdoc.api-docs.servers[0].url=http://localhost:8080
+springdoc.api-docs.servers[0].description=Servidor de Desarrollo

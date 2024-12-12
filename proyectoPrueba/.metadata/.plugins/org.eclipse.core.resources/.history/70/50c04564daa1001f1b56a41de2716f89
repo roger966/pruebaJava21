@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+package com.example.proyectoPrueba.model.entity;
+
+/**
+ * 
+ */
+public class NivelContrasena {
+
+}

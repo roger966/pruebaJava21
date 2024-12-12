@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="false"/>
+	<list key="searchhistory">
+		<item value="springdoc-openapi-ui"/>
+		<item value="springdoc.api-docs.version=1.0.0"/>
+		<item value="org.springframework.boot"/>
+		<item value="0.58"/>
+		<item value="web"/>
+		<item value="sprin"/>
+	</list>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="selection" value="maven"/>
 		<item key="wrap" value="true"/>

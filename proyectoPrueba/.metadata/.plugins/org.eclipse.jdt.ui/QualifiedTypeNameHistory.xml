@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
+    <fullyQualifiedTypeName name="com.example.proyectoPrueba.service.i.IUsuarioService"/>
+    <fullyQualifiedTypeName name="com.example.proyectoPrueba.model.DTO.ResultadoDTO"/>
+</qualifiedTypeNameHistroy>

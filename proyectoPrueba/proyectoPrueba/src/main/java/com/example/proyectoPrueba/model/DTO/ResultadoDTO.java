@@ -5,7 +5,7 @@ package com.example.proyectoPrueba.model.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 /**
  * @author roger
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+
 public class ResultadoDTO {
 	
 	private boolean exitoso;
