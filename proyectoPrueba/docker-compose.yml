@@ -1,16 +1,16 @@
-version: '3.8'
+#version: '3.8'
 
-services:
-  proyectoprueba: # Nombre de la aplicación (lo que aparece en application.properties)
-    build: ./proyectoPrueba  # Nombre de la carpeta donde está el Dockerfile
-    mem_limit: 512m
-    ports:
-      - "8081:8081"
-    environment:
-      DB_URL: "mem:testdb"  # Base de datos en memoria (predeterminado)
-      DB_USER: sa
-      DB_PASSWORD: password
-    restart: always
+#services:
+  #proyectoprueba: # Nombre de la aplicación (lo que aparece en application.properties)
+    #build: ./proyectoPrueba  # Nombre de la carpeta donde está el Dockerfile
+    #mem_limit: 512m
+    #ports:
+      #- "8081:8081"
+    #environment:
+      #DB_URL: "mem:testdb"  # Base de datos en memoria (predeterminado)
+      #DB_USER: sa
+      #DB_PASSWORD: password
+    #restart: always
     #depends_on:
       #- app_pruebajava # Cambié esto a la forma correcta
 
@@ -28,3 +28,104 @@ services:
 #     test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
 #     timeout: 10s
 #     retries: 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      
+      
+version: '3.8'
+
+services:
+  proyectoprueba:
+    container_name: proyectoprueba
+    image: image-proyectoprueba:1.0.0
+    build: ./proyectoPrueba  # Ruta donde está el Dockerfile
+    mem_limit: 512m
+    ports:
+      - "8081:8081"
+    environment:
+      - DB_URL=jdbc:postgresql://java_db:5432/postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+    depends_on:
+      - java_db  # Asegúrate de que el contenedor de la base de datos esté levantado primero
+  
+  java_db:
+    container_name: java_db
+    image: postgres:latest  # Imagen oficial de PostgreSQL
+    ports:
+      - "5432:5432"  # Puerto estándar de PostgreSQL
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      
+
+
+
+
+

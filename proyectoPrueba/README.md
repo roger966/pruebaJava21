@@ -10,3 +10,15 @@ cuando ya esta todo voy a la ruta de la carpeta viendo el docker-compose y... ti
 docker-compose build #se crea la imagen, 
 después lanzo
 docker-compose up se crea contenedor y lo despliega :)
+
+
+
+
+recordar esto:
+para los cambios así de ultimo momento se debe lanzar esto:
+#### para empaquetar todo con lo dl ultimo time: 
+./mvnw clean package -DskipTests; y después de esto si
+docker-compose build
+# docker images
+docker-compose up
+### se puede usar docker secret para no exponer las variables de entorno.
